@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.InputStream;
-import java.net.URL;
+
 
 import javax.imageio.ImageIO;
 
@@ -16,8 +16,8 @@ public class GeradoraDeFigurinhas {
         // leitura da imagem
         // InputStream inputStream = 
         //             new FileInputStream(new File("entrada/filme-maior.jpg"));
-        InputStream inputStream2 = new URL("https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@.jpg").openStream();
-        BufferedImage imagemOriginal = ImageIO.read(inputStream2);
+        //InputStream inputStream2 = new URL("https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@.jpg").openStream();
+        BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
         // cria nova imagem em memória com transparência e com tamanho novo
         int largura = imagemOriginal.getWidth();
@@ -35,10 +35,10 @@ public class GeradoraDeFigurinhas {
         graphics.setFont(fonte);
 
         // escrever uma frase na nova imagem
-        graphics.drawString("RECEBA", 300, novaAltura - 100);
+        graphics.drawString("RECEBA", 355, novaAltura - 55);
 
         // escrever a nova imagem em um arquivo
-        ImageIO.write(novaImagem, ".png", new File(nomeArquivo));
+        ImageIO.write(novaImagem, "png", new File(nomeArquivo));
 
     }
 
